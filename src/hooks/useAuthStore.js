@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { clearErrorMessage, onChecking, onLogin, onLogout, setErrorMessage } from '../store';
+import { clearErrorMessage, onChecking, onInitialCategories, onInitialReports, onInitialTransactions, onLogin, onLogout, setErrorMessage } from '../store';
 import financeApi from '../api/financeApi';
 
 export const useAuthStore = () =>
@@ -74,6 +74,9 @@ export const useAuthStore = () =>
     const startLogout = () =>
     {
         dispatch(onLogout());
+        dispatch(onInitialTransactions());
+        dispatch(onInitialCategories());
+        dispatch(onInitialReports());
         localStorage.clear();
     }
 

@@ -6,6 +6,10 @@ export const transactionsSlice = createSlice({
         transactions: []
     },
     reducers: {
+        onInitialTransactions: (state) =>
+        {
+            state.transactions = [];
+        },
         onAddNewTransaction: (state, { payload }) =>
         {
             state.transactions.push(payload);
@@ -29,4 +33,4 @@ export const transactionsSlice = createSlice({
     }
 });
 
-export const { onAddNewTransaction, onUpdateTransaction, onDeleteTransaction, onLoadTransactions } = transactionsSlice.actions;
+export const { onInitialTransactions, onAddNewTransaction, onUpdateTransaction, onDeleteTransaction, onLoadTransactions } = transactionsSlice.actions;

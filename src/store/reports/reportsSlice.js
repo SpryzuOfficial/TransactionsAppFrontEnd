@@ -8,6 +8,12 @@ export const reportsSlice = createSlice({
         expenses: 0
     },
     reducers: {
+        onInitialReports: (state) =>
+        {
+            state.budget = 0;
+            state.income = 0;
+            state.expenses = 0;
+        },
         onLoadBudget: (state, { payload }) =>
         {
             state.budget = payload;
@@ -24,4 +30,4 @@ export const reportsSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { onLoadBudget, onLoadIncome, onLoadExpenses } = reportsSlice.actions;
+export const { onInitialReports, onLoadBudget, onLoadIncome, onLoadExpenses } = reportsSlice.actions;

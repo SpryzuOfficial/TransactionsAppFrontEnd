@@ -6,6 +6,10 @@ export const categoriesSlice = createSlice({
         categories: []
     },
     reducers: {
+        onInitialCategories: (state) =>
+        {
+            state.categories = [];
+        },
         onAddNewCategory: (state, { payload }) =>
         {
             state.categories.push(payload);
@@ -38,4 +42,4 @@ export const categoriesSlice = createSlice({
     }
 });
 
-export const { onAddNewCategory, onUpdateCategory, onDeleteCategory, onLoadCategories } = categoriesSlice.actions;
+export const { onInitialCategories, onAddNewCategory, onUpdateCategory, onDeleteCategory, onLoadCategories } = categoriesSlice.actions;
