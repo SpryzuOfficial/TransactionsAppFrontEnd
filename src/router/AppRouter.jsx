@@ -30,7 +30,7 @@ export const AppRouter = () =>
                 ? (
                     <>
                         <Route path="/auth/login" element={<LoginPage />} />
-                        <Route path="/auth/signin" element={<SigninPage />} />
+                        <Route path="/auth/signup" element={<SigninPage />} />
                         <Route path="/*" element={<Navigate to="/auth/login" />} />
                     </>
                     )

@@ -62,7 +62,7 @@ export const SigninPage = () =>
         <>
             <NavBar status="not-authenticated" />
 
-            <h1 className="form-title">Sign In</h1>
+            <h1 className="form-title">Sign Up</h1>
             <form className="form-card" onSubmit={formSubmit}>
                 <input 
                     autoComplete="off"
@@ -102,7 +102,7 @@ export const SigninPage = () =>
                     onChange={ onInputChange }
                 />
 
-                <button className="form-element">Sign In</button>
+                <button className="form-element">Sign Up</button>
             </form>
         </>
     )

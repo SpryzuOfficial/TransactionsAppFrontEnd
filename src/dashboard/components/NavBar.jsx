@@ -24,7 +24,7 @@ export const NavBar = ({ status }) =>
                     ?
                         <>
                             <button onClick={() => navigate('/auth/login')} className="navbar-button">Log in</button>
-                            <button onClick={() => navigate('/auth/signin')} className="navbar-button">Sign in</button>
+                            <button onClick={() => navigate('/auth/signup')} className="navbar-button">Sign up</button>
                         </>
                     :
                         <button onClick={ onLogout } className="navbar-button"><LogoutIcon /></button>
