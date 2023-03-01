@@ -1,0 +1,26 @@
+.update-btn {
+    border: 0;
+    border-radius: .4em;
+
+    font-size: 1.3em;
+    
+    background-color: rgb(39, 49, 73);
+}
+
+.budget-data {
+    display: flex;
+
+    justify-content: space-around;
+
+    width: 100%;
+
+    font-family: 'Roboto';
+    font-size: 1.3em;
+    color: rgb(198, 233, 220);
+}
+
+@media screen and (max-width: 900px) {
+    .budget-data {
+        display: block;
+    }
+}

@@ -1,0 +1,116 @@
+.view {
+    display: flexbox;
+    width: 100%;
+}
+
+.view-mxw900 {
+    max-width: 900px;
+}
+
+.view-mxw500 {
+    max-width: 500px;
+}
+
+.view-mxw1000 {
+    max-width: 1000px;
+}
+
+.view-panel {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 1em;
+}
+
+.view-panel-element {
+    margin: 1em 0;
+    
+    font-family: 'Roboto';
+    font-size: 2.2em;
+    color: rgb(198, 233, 220);
+}
+
+label.view-panel-element {
+    font-size: 1.5em;
+}
+
+button.view-panel-element {
+    padding: 0em 1em;
+
+    border: 0;
+    border-radius: 3em;
+
+    background-color: rgb(39, 49, 73);
+
+    font-size: 1.5em;
+}
+
+input.view-panel-element {
+    border: 0;
+    border-radius: .4em;
+    padding: .2em;
+
+    width: 40%;
+
+    font-size: 1.3em;
+
+    background-color: rgb(39, 49, 73);
+}
+
+select.view-panel-element {
+    border: 0;
+    border-radius: .4em;
+    padding: .2em;
+
+    font-size: 1.3em;
+
+    background-color: rgb(39, 49, 73);
+}
+
+.view-panel-element:focus {
+    outline-width: 0;
+    background-color: rgb(52, 63, 87);
+}
+
+button.view-panel-element:hover {
+    background-color: rgb(52, 63, 87);
+}
+
+input.view-panel-element:hover {
+    background-color: rgb(52, 63, 87);
+}
+
+.custom-container {
+    font-family: 'Roboto';
+    color: rgb(198, 233, 220) !important;
+}
+
+button.custom-container {
+    background-color: rgb(116, 11, 11) !important;
+}
+
+.view-panel-grid {
+    display: grid;
+}
+
+.view-panel-element-grid {
+    margin: .8em 0 .1em 0;
+}
+
+input.view-panel-element-grid {
+    width: 90%;
+}
+
+@media screen and (max-width: 900px) {
+    .view-panel {
+        display: grid;
+    }
+    .view-panel-element {
+        margin: .2em;
+    }
+    input.view-panel-element {
+        width: 90%;
+    }
+}

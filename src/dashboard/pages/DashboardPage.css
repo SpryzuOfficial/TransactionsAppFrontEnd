@@ -1,0 +1,92 @@
+.user-panel {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+
+    margin: 1em auto;
+
+    max-width: 700px;
+}
+
+.user-panel-element {
+    margin: 0;
+    font-family: 'Roboto';
+    font-size: 4.2em;
+    color: rgb(198, 233, 220);
+}
+
+button.user-panel-element {
+    margin: 2em 0;
+
+    padding: .3em .4em .1em .4em;
+
+    border: 1px solid rgb(3, 6, 14);
+    border-radius: 3em;
+
+    font-size: 1.2em;
+    background-color: rgb(26, 28, 33);
+}
+
+button.user-panel-element:focus {
+    outline-width: 0;
+    background-color: rgb(36, 39, 51);
+}
+
+button.user-panel-element:hover {
+    background-color: rgb(36, 39, 51);
+}
+
+.pages-buttons {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+
+    margin: 1em auto;
+
+    max-width: 1000px;
+}
+
+.page-buttons-btn {
+    border: 0;
+    padding: .5em 1em;
+
+    background-color: rgb(26, 28, 33);
+
+    font-family: 'Roboto';
+    font-size: 1.5em;
+    color: rgb(198, 233, 220);
+}
+
+.page-buttons-btn-selected {
+    text-decoration: underline;
+}
+
+.page-buttons-btn:focus {
+    outline-width: 0;
+    background-color: rgb(35, 39, 52);
+    color: rgb(198, 249, 229);
+}
+
+.page-buttons-btn:hover {
+    background-color: rgb(35, 39, 52);
+
+    color: rgb(198, 249, 229);
+}
+
+.view-card {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    
+    margin: 1em 3em;
+}
+
+@media screen and (max-width: 630px) {
+    .pages-buttons {
+        display: block;
+    }
+    .page-buttons-btn {
+        margin: .1em .1em;
+        width: 90%;
+    }
+}

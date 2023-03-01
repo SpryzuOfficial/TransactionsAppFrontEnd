@@ -1,0 +1,88 @@
+.list {
+    margin: 0;
+    padding: 2em 1em;
+
+    width: 100%;
+
+    border-radius: 1em;
+
+    background-color: rgb(20, 24, 35);
+}
+
+.list-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .3em 2em;
+    border-radius: 1em;
+
+    margin: 1em 0 0;
+
+    list-style: none;
+
+    background-color: rgb(14, 16, 23);
+
+    font-family: 'Roboto';
+    font-size: 1.3em;
+    color: rgb(198, 233, 220);
+}
+
+.list-element-btn {
+    padding: 0 2em;
+    border: 0;
+    border-radius: 2em;
+}
+
+.edit-style {
+    background-color: rgb(65, 90, 100);
+    color: rgb(193, 216, 225);
+}
+
+.edit-style:focus {
+    outline-width: 0;
+    background-color: rgb(80, 110, 122);
+    color: rgb(164, 203, 219);
+}
+
+.edit-style:hover {
+    background-color: rgb(80, 110, 122);
+    color: rgb(164, 203, 219);
+}
+
+.delete-style {
+    background-color: rgb(56, 24, 24);
+    color: rgb(224, 161, 161);
+}
+
+.delete-style:focus {
+    outline-width: 0;
+    background-color: rgb(63, 30, 30);
+    color: rgb(210, 146, 146);
+}
+
+.delete-style:hover {
+    background-color: rgb(63, 30, 30);
+    color: rgb(210, 146, 146);
+}
+
+.category-element {
+    padding: .2em 1em;
+    border-radius: .5em;
+
+    background-color: rgb(29, 30, 33);
+}
+
+.text-green {
+    color: rgb(73, 203, 73);
+}
+
+.text-red {
+    color: rgb(203, 73, 73);
+}
+
+@media screen and (max-width: 900px) {
+    .list-element {
+        display: block;
+        padding: 0.3em 0.2em;
+    }
+}

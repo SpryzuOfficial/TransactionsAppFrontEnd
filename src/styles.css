@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background-color: rgb(16, 18, 21);
+}
+
+.checking {
+    font-family: 'Roboto';
+    font-size: 2em;
+    color: rgb(218, 231, 222);
+}

@@ -1,0 +1,60 @@
+.form-card {
+    text-align: center;
+    display: flexbox;
+    margin: 2em auto;
+
+    max-width: 1000px;
+}
+
+.form-element {
+    display: grid;
+
+    margin: 2em auto;
+    width: 50%;
+    padding: .4em;
+
+    border: 2px solid rgb(93, 93, 97);
+    border-radius: .6em;
+
+    background-color: rgb(34, 38, 44);
+
+    font-family: 'Roboto';
+    font-size: 1.3em;
+    color: rgb(215, 231, 220);
+}
+
+.form-element:focus {
+    outline-width: 0;
+    background-color: rgb(49, 54, 60);
+
+    color: rgb(168, 192, 176);
+}
+
+.form-element:hover {
+    background-color: rgb(49, 54, 60);
+
+    color: rgb(168, 192, 176);
+}
+
+button.form-element {
+    background-color: rgb(22, 26, 29);
+    font-size: 1.5em;
+}
+
+.form-title {
+    text-align: center;
+    margin: 1.5em 0;
+
+    font-family: 'Roboto';
+    font-size: 3em;
+    color: rgb(198, 233, 220);
+}
+
+.custom-container {
+    font-family: 'Roboto';
+    color: rgb(198, 233, 220) !important;
+}
+
+button.custom-container {
+    background-color: rgb(116, 11, 11) !important;
+}
