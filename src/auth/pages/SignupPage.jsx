@@ -13,9 +13,9 @@ const formFields = {
     confirmPassword: ''
 }
 
-export const SigninPage = () => 
+export const SignupPage = () => 
 {
-    const { errorMessage, startSignin } = useAuthStore();
+    const { errorMessage, startSignup } = useAuthStore();
     const { username, email, password, confirmPassword, onInputChange } = useForm(formFields);
 
     const formSubmit = (event) =>
@@ -38,7 +38,7 @@ export const SigninPage = () =>
             return;
         }
 
-        startSignin({ username, email, password });
+        startSignup({ username, email, password });
     }
 
     useEffect(() =>

@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { DashboardPage } from '../dashboard/pages/DashboardPage';
 import { useAuthStore } from '../hooks/useAuthStore';
-import { LoginPage, SigninPage } from '../auth/pages/';
+import { LoginPage, SignupPage } from '../auth/pages/';
 
 import '../styles.css';
 
@@ -30,7 +30,7 @@ export const AppRouter = () =>
                 ? (
                     <>
                         <Route path="/auth/login" element={<LoginPage />} />
-                        <Route path="/auth/signup" element={<SigninPage />} />
+                        <Route path="/auth/signup" element={<SignupPage />} />
                         <Route path="/*" element={<Navigate to="/auth/login" />} />
                     </>
                     )

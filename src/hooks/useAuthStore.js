@@ -40,7 +40,7 @@ export const useAuthStore = () =>
         }
     }
 
-    const startSignin = async({ username, email, password }) =>
+    const startSignup = async({ username, email, password }) =>
     {
         dispatch(onChecking());
 
@@ -121,7 +121,7 @@ export const useAuthStore = () =>
         user,
         errorMessage,
         startLogin,
-        startSignin,
+        startSignup,
         startLogout,
         startUpdateUser,
         checkAuthToken
