@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import Swal from 'sweetalert2';
 
 import { NavBar } from '../../dashboard/components/NavBar';
+import { swalExecute } from '../../helpers/swalExecute';
 import { useForm } from '../../helpers/useForm';
 import { useAuthStore } from '../../hooks/useAuthStore';
 import './AuthPage.css';
@@ -25,19 +25,7 @@ export const LoginPage = () =>
 
     useEffect(() =>
     {
-        if(errorMessage !== undefined)
-        {
-            Swal.fire({
-                icon: 'error',
-                text: errorMessage,
-                background: '#131b20',
-                confirmButtonText: 'Try again',
-                customClass: {
-                    confirmButton: 'custom-container',
-                    htmlContainer: 'custom-container'
-                }
-            });
-        }
+        swalExecute((errorMessage !== undefined), errorMessage, false);
     }, [errorMessage]);
 
     return (

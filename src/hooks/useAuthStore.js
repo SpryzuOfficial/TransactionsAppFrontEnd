@@ -9,34 +9,39 @@ export const useAuthStore = () =>
 
     const startLogin = async({ id, email, password }, strict=true) =>
     {
-        dispatch(onChecking());
-
+        if(strict) dispatch(onChecking());
+        
         try 
         {
             const { data } = await financeApi.post('/auth/login', { id, email, password });
             const { user } = data;
 
-            if(!strict) return;
+            if(strict)
+            {
+                localStorage.setItem('token', data.token);
+    
+                dispatch(onLogin({ username: user.username, uid: user._id }));
 
-            localStorage.setItem('token', data.token);
-
-            dispatch(onLogin({ username: user.username, uid: user._id }));
+                return;
+            }
+            return true;
         } 
-        catch ({ response }) 
+        catch (error)
         {
             if(strict)
             {
                 dispatch(onLogout('Invalid Email or Password'));
+
+                setTimeout(() =>
+                {
+                    dispatch(clearErrorMessage());
+                }, 10);
             }
             else
             {
-                dispatch(setErrorMessage('Invalid Password'));
+                dispatch(setErrorMessage('Wrong old password'));
+                return false;
             }
-
-            setTimeout(() =>
-            {
-                dispatch(clearErrorMessage());
-            }, 10);
         }
     }
 

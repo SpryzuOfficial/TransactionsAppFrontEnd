@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Swal from 'sweetalert2';
+import { swalExecute } from '../../helpers/swalExecute';
 
 import { useForm } from '../../helpers/useForm';
 import { useAuthStore } from '../../hooks/useAuthStore'
@@ -15,36 +15,30 @@ export const SettingsView = () =>
 {
     const { user, errorMessage, startLogin, startUpdateUser } = useAuthStore();
     const { username, password, oldPassword, onInputChange } = useForm(initialForm);
-
-    const updatePassword = () =>
+    
+    const updatePassword = async() =>
     {
-        startLogin({ id: user.uid, email: 'exp@exp.com', password: oldPassword }, false);
+        if(!swalExecute((!password || !oldPassword), 'Password is required', false)) return;
 
-        if(errorMessage !== undefined) return;
+        if(!(await startLogin({ id: user.uid, email: 'exp@exp.com', password: oldPassword }, false))) return;
 
         startUpdateUser({ password });
+        
+        swalExecute(true, 'Password updated');
     }
 
     const updateUsername = () =>
     {
+        if(!swalExecute((!username), 'New username is required', false)) return;
+
         startUpdateUser({ username });
+
+        swalExecute(true, 'Username updated');
     }
 
     useEffect(() =>
     {
-        if(errorMessage !== undefined)
-        {
-            Swal.fire({
-                icon: 'error',
-                text: errorMessage,
-                background: '#131b20',
-                confirmButtonText: 'Try again',
-                customClass: {
-                    confirmButton: 'custom-container',
-                    htmlContainer: 'custom-container'
-                }
-            });
-        }
+        swalExecute((errorMessage), errorMessage, false);
     }, [errorMessage]);
 
     return (

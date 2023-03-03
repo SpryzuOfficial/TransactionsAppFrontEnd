@@ -87,8 +87,12 @@ input.view-panel-element:hover {
     color: rgb(198, 233, 220) !important;
 }
 
-button.custom-container {
+.custom-container-danger {
     background-color: rgb(116, 11, 11) !important;
+}
+
+.custom-container-success {
+    background-color: rgb(14, 108, 57) !important;
 }
 
 .view-panel-grid {
@@ -99,8 +103,17 @@ button.custom-container {
     margin: .8em 0 .1em 0;
 }
 
+div.view-panel-element-grid {
+    justify-content: space-between;
+}
+
 input.view-panel-element-grid {
-    width: 90%;
+    width: 100%;
+}
+
+.view-panel-element-width {
+    margin: .2em 0;
+    width: 45%;
 }
 
 @media screen and (max-width: 900px) {
@@ -111,6 +124,12 @@ input.view-panel-element-grid {
         margin: .2em;
     }
     input.view-panel-element {
-        width: 90%;
+        width: 100%;
+    }
+    div.view-panel-element-grid {
+        margin: .2em;
+    }
+    .view-panel-element-width {
+        width: 100%;
     }
 }

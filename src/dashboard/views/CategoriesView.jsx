@@ -25,6 +25,8 @@ export const CategoriesView = () =>
 
     const addCategory = () =>
     {
+        if(!swalExecute((!name), 'Category name is required', false)) return;
+
         if(update.isUpdate)
         {
             startUpdateCategory({ id: update.id, name });

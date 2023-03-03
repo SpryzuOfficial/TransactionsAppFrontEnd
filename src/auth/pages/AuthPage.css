@@ -49,12 +49,3 @@ button.form-element {
     font-size: 3em;
     color: rgb(198, 233, 220);
 }
-
-.custom-container {
-    font-family: 'Roboto';
-    color: rgb(198, 233, 220) !important;
-}
-
-button.custom-container {
-    background-color: rgb(116, 11, 11) !important;
-}
