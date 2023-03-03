@@ -6,6 +6,7 @@ import { CategoryItem } from '../components/CategoryItem';
 import { useForm } from '../../helpers/useForm';
 import './css/View.css';
 import './css/List.css';
+import { swalExecute } from '../../helpers/swalExecute';
 
 const formFields = {
     name: '',
