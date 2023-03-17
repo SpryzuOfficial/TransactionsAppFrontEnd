@@ -4,7 +4,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useAuthStore } from '../../hooks/useAuthStore';
 import './NavBar.css';
 
-export const NavBar = ({ status }) =>
+export const NavBar = ({ status, username }) =>
 {
     const navigate = useNavigate();
     const { startLogout } = useAuthStore();
@@ -27,7 +27,10 @@ export const NavBar = ({ status }) =>
                             <button onClick={() => navigate('/auth/signup')} className="navbar-button">Sign up</button>
                         </>
                     :
-                        <button onClick={ onLogout } className="navbar-button"><LogoutIcon /></button>
+                        <>
+                            <h1 className="navbar-element">{username}</h1>
+                            <button onClick={ onLogout } className="navbar-button"><LogoutIcon /></button>
+                        </>
                 }
             </div>
         </div>

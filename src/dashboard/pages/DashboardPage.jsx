@@ -14,11 +14,11 @@ export const DashboardPage = () =>
     
     return (
         <>
-            <NavBar status="authenticated" />
+            <NavBar status="authenticated" username={ username } />
             
-            <div className="user-panel">
+            {/* <div className="user-panel">
                 <h1 className="user-panel-element">Welcome {username}</h1>
-            </div>
+            </div> */}
 
             <div className="pages-buttons">
                 <button onClick={() => setView('trans')} className={`page-buttons-btn ${view === 'trans' ? 'page-buttons-btn-selected' : ''}`}>Transactions</button>

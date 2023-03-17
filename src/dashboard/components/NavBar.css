@@ -8,8 +8,19 @@
     justify-content: space-between;
 }
 
+.navbar-element {
+    margin: 0 2em;
+    font-family: 'Roboto';
+    font-size: 2em;
+    color: rgb(198, 233, 220);
+}
+
 .navbar-buttons {
-    display: inline;
+    display: flex;
+
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
 }
 
 .navbar-button {
