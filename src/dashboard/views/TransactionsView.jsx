@@ -20,7 +20,7 @@ export const TransactionsView = () =>
 {
     const { transactions, startAddNewTransaction, startLoadTransactions } = useTransactionsStore();
     const { categories, startLoadCategories } = useCategoriesStore();
-    const { title, amount, categoryName, spentSign, onInputChange } = useForm(formFields);
+    const { title, amount, categoryName, spentSign, onInputChange, setState, formState } = useForm(formFields);
 
     const addTransaction = () =>
     {

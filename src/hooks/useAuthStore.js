@@ -39,7 +39,7 @@ export const useAuthStore = () =>
             }
             else
             {
-                dispatch(setErrorMessage('Wrong old password'));
+                dispatch(setErrorMessage('Wrong password'));
                 return false;
             }
         }

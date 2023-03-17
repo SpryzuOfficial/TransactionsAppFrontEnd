@@ -17,7 +17,7 @@ export const DashboardPage = () =>
             <NavBar status="authenticated" />
             
             <div className="user-panel">
-                <h1 className="user-panel-element">{username}</h1>
+                <h1 className="user-panel-element">Welcome {username}</h1>
             </div>
 
             <div className="pages-buttons">

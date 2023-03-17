@@ -14,7 +14,7 @@ const initialForm = {
 export const SettingsView = () => 
 {
     const { user, errorMessage, startLogin, startUpdateUser } = useAuthStore();
-    const { username, password, oldPassword, onInputChange } = useForm(initialForm);
+    const { username, password, oldPassword, onInputChange, setState } = useForm(initialForm);
     
     const updatePassword = async() =>
     {
@@ -25,6 +25,9 @@ export const SettingsView = () =>
         startUpdateUser({ password });
         
         swalExecute(true, 'Password updated');
+
+        setState('oldPassword', '');
+        setState('password', '');
     }
 
     const updateUsername = () =>
@@ -34,6 +37,8 @@ export const SettingsView = () =>
         startUpdateUser({ username });
 
         swalExecute(true, 'Username updated');
+
+        setState('username', '');
     }
 
     useEffect(() =>
@@ -55,7 +60,7 @@ export const SettingsView = () =>
                     value={ username }
                     onChange={ onInputChange }
                 />
-                <button className="view-panel-element view-panel-element-grid" onClick={ updateUsername }>Change username</button>
+                <button className="view-panel-element view-panel-element-grid" onClick={ updateUsername }>Save</button>
                 <p className="view-panel-element view-panel-element-grid">Password</p>
                 <input 
                     autoComplete="off" 
@@ -75,7 +80,7 @@ export const SettingsView = () =>
                     value={ password }
                     onChange={ onInputChange }
                 />
-                <button className="view-panel-element view-panel-element-grid" onClick={ updatePassword }>Change Password</button>
+                <button className="view-panel-element view-panel-element-grid" onClick={ updatePassword }>Save</button>
             </div>
         </div>
     )

@@ -1,12 +1,11 @@
 .list {
     margin: 0;
-    padding: 2em 1em;
+    padding: .5em 1em 1em 1em;
 
     width: 100%;
 
-    border-radius: 1em;
 
-    background-color: rgb(20, 24, 35);
+    background-color: rgb(34, 45, 70);
 }
 
 .list-element {
@@ -14,13 +13,12 @@
     justify-content: space-between;
     align-items: center;
     padding: .3em 2em;
-    border-radius: 1em;
 
-    margin: 1em 0 0;
+    margin: .5em 0 0;
 
     list-style: none;
 
-    background-color: rgb(14, 16, 23);
+    background-color: rgb(14, 17, 29);
 
     font-family: 'Roboto';
     font-size: 1.3em;
@@ -30,7 +28,6 @@
 .list-element-btn {
     padding: 0 2em;
     border: 0;
-    border-radius: 2em;
 }
 
 .edit-style {
@@ -40,12 +37,12 @@
 
 .edit-style:focus {
     outline-width: 0;
-    background-color: rgb(80, 110, 122);
+    background-color: rgb(49, 71, 79);
     color: rgb(164, 203, 219);
 }
 
 .edit-style:hover {
-    background-color: rgb(80, 110, 122);
+    background-color: rgb(49, 71, 79);
     color: rgb(164, 203, 219);
 }
 
@@ -56,20 +53,19 @@
 
 .delete-style:focus {
     outline-width: 0;
-    background-color: rgb(63, 30, 30);
+    background-color: rgb(43, 17, 17);
     color: rgb(210, 146, 146);
 }
 
 .delete-style:hover {
-    background-color: rgb(63, 30, 30);
+    background-color: rgb(43, 17, 17);
     color: rgb(210, 146, 146);
 }
 
 .category-element {
     padding: .2em 1em;
-    border-radius: .5em;
 
-    background-color: rgb(29, 30, 33);
+    background-color: rgb(39, 49, 73);
 }
 
 .text-green {

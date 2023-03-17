@@ -40,7 +40,6 @@ button.view-panel-element {
     padding: 0em 1em;
 
     border: 0;
-    border-radius: 3em;
 
     background-color: rgb(39, 49, 73);
 
@@ -49,7 +48,6 @@ button.view-panel-element {
 
 input.view-panel-element {
     border: 0;
-    border-radius: .4em;
     padding: .2em;
 
     width: 40%;
@@ -61,7 +59,7 @@ input.view-panel-element {
 
 select.view-panel-element {
     border: 0;
-    border-radius: .4em;
+    /* border-radius: .4em; */
     padding: .2em;
 
     font-size: 1.3em;
@@ -71,15 +69,15 @@ select.view-panel-element {
 
 .view-panel-element:focus {
     outline-width: 0;
-    background-color: rgb(52, 63, 87);
+    background-color: rgb(31, 39, 56);
 }
 
 button.view-panel-element:hover {
-    background-color: rgb(52, 63, 87);
+    background-color: rgb(31, 39, 56);
 }
 
 input.view-panel-element:hover {
-    background-color: rgb(52, 63, 87);
+    background-color: rgb(31, 39, 56);
 }
 
 .custom-container {

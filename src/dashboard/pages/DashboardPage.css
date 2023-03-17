@@ -50,7 +50,7 @@ button.user-panel-element:hover {
     border: 0;
     padding: .5em 1em;
 
-    background-color: rgb(26, 28, 33);
+    background-color: rgb(35, 39, 52);
 
     font-family: 'Roboto';
     font-size: 1.5em;
@@ -63,12 +63,12 @@ button.user-panel-element:hover {
 
 .page-buttons-btn:focus {
     outline-width: 0;
-    background-color: rgb(35, 39, 52);
+    background-color: rgb(26, 28, 33);
     color: rgb(198, 249, 229);
 }
 
 .page-buttons-btn:hover {
-    background-color: rgb(35, 39, 52);
+    background-color: rgb(26, 28, 33);
 
     color: rgb(198, 249, 229);
 }
