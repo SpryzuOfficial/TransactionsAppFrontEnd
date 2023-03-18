@@ -19,7 +19,7 @@ export const AppRouter = () =>
     if(status === 'checking')
     {
         return (
-            <h3 className="checking">Loading...</h3>
+            <h3 className="checking animate__animated animate__fadeIn">Loading...</h3>
         )
     }
 

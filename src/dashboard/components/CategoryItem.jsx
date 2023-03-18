@@ -23,7 +23,7 @@ export const CategoryItem = ({ category, setStates }) =>
     }
 
     return (
-        <li className="list-element">
+        <li className="list-element animate__animated animate__fadeInUp">
             <p>{ name }</p>
             <button className="list-element-btn edit-style" onClick={ editCategory }><EditIcon /></button>
             <button className="list-element-btn delete-style" onClick={ deleteCategory }><DeleteIcon /></button>

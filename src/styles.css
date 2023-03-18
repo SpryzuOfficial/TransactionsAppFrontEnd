@@ -7,5 +7,9 @@ body {
 .checking {
     font-family: 'Roboto';
     font-size: 2em;
+
+    margin: 25% auto;
+    text-align: center;
+
     color: rgb(218, 231, 222);
 }

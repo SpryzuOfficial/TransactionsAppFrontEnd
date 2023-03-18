@@ -18,7 +18,7 @@ export const TransactionItem = ({ transaction }) =>
     }
 
     return (
-        <li className="list-element">
+        <li className="list-element animate__animated animate__fadeInUp">
             <p>{ name }</p>
             <p className={`${isSpent ? 'text-red' : 'text-green'}`}>{`${isSpent ? '-' : '+'}$${ amount }`}</p>
             <p>Date: { dateObj.toLocaleDateString('en-US') }</p>
