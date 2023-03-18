@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import AddIcon from '@mui/icons-material/Add';
+import { Fade } from 'react-awesome-reveal';
 
 import { TransactionItem } from '../components/TransactionItem';
 import { useCategoriesStore } from '../../hooks/useCategoriesStore';
@@ -20,7 +21,7 @@ export const TransactionsView = () =>
 {
     const { transactions, startAddNewTransaction, startLoadTransactions } = useTransactionsStore();
     const { categories, startLoadCategories } = useCategoriesStore();
-    const { title, amount, categoryName, spentSign, onInputChange, setState, formState } = useForm(formFields);
+    const { title, amount, categoryName, spentSign, onInputChange, onResetForm } = useForm(formFields);
 
     const addTransaction = () =>
     {
@@ -42,6 +43,8 @@ export const TransactionsView = () =>
         });
 
         if(!swalExecute((!flag), 'Transaction category is required', false)) return;
+
+        onResetForm();
     }
 
     useEffect(() =>
@@ -52,58 +55,59 @@ export const TransactionsView = () =>
 
     return (
         <div className="view view-mxw1000">
-            <div className="view-panel view-panel-grid">
-                <h1 className="view-panel-element view-panel-element-grid">Transactions</h1>
-                <input
-                    autoComplete="off" 
-                    type="text" 
-                    className="view-panel-element view-panel-element-grid" 
-                    placeholder="Title"
-                    name="title"
-                    value={ title }
-                    onChange={ onInputChange }
-                />
-                <div className="view-panel view-panel-element-grid">
-                    <select className="view-panel-element view-panel-element-width" id="sign" name="spentSign" value={ spentSign } onChange={ onInputChange }>
-                        <option>Sign</option>
-                        <option>-</option>
-                        <option>+</option>
-                    </select>
+            <Fade>
+                <div className="view-panel view-panel-grid">
                     <input
                         autoComplete="off" 
                         type="text" 
-                        className="view-panel-element view-panel-element-width" 
-                        placeholder="Amount"
-                        name="amount"
-                        value={ amount }
+                        className="view-panel-element view-panel-element-grid" 
+                        placeholder="Title"
+                        name="title"
+                        value={ title }
                         onChange={ onInputChange }
                     />
+                    <div className="view-panel view-panel-element-grid">
+                        <select className="view-panel-element view-panel-element-width" id="sign" name="spentSign" value={ spentSign } onChange={ onInputChange }>
+                            <option>Sign</option>
+                            <option>-</option>
+                            <option>+</option>
+                        </select>
+                        <input
+                            autoComplete="off" 
+                            type="text" 
+                            className="view-panel-element view-panel-element-width" 
+                            placeholder="Amount"
+                            name="amount"
+                            value={ amount }
+                            onChange={ onInputChange }
+                        />
+                    </div>
+                    <select className="view-panel-element view-panel-element-grid" id="categories" name="categoryName" value={ categoryName } onChange={ onInputChange }>
+                        <option key="1">Category</option>
+                        {
+                            categories.map(({ id, name }) =>
+                            {
+                                return <option key={ id }>{ name }</option>
+                            })
+                        }
+                    </select>
+                    <button className="view-panel-element view-panel-element-grid" onClick={ addTransaction }><AddIcon /></button>
                 </div>
-                <select className="view-panel-element view-panel-element-grid" id="categories" name="categoryName" value={ categoryName } onChange={ onInputChange }>
-                    <option key="1">Category</option>
-                    {
-                        categories.map(({ id, name }) =>
+                
+                {
+                    transactions.length > 0
+                    ?
+                    <ol className="list">
                         {
-                            return <option key={ id }>{ name }</option>
-                        })
-                    }
-                </select>
-                <button className="view-panel-element view-panel-element-grid" onClick={ addTransaction }><AddIcon /></button>
-            </div>
-            
-            {
-                transactions.length > 0
-                ?
-                <ol className="list">
-                    {
-                        transactions.map(transaction =>
-                        {
-                            return <TransactionItem key={ transaction._id } transaction={ transaction } />
-                        })
-                    }
-                </ol>
-                : <></>
-            }
+                            transactions.map(transaction =>
+                            {
+                                return <TransactionItem key={ transaction._id } transaction={ transaction } />
+                            })
+                        }
+                    </ol>
+                    : <></>
+                }
+            </Fade>
         </div>
     )
 }

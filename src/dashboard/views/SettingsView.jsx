@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { swalExecute } from '../../helpers/swalExecute';
+import { Fade } from 'react-awesome-reveal';
 
 import { useForm } from '../../helpers/useForm';
 import { useAuthStore } from '../../hooks/useAuthStore'
@@ -14,7 +15,7 @@ const initialForm = {
 export const SettingsView = () => 
 {
     const { user, errorMessage, startLogin, startUpdateUser } = useAuthStore();
-    const { username, password, oldPassword, onInputChange, setState } = useForm(initialForm);
+    const { username, password, oldPassword, onInputChange, onResetForm } = useForm(initialForm);
     
     const updatePassword = async() =>
     {
@@ -26,8 +27,7 @@ export const SettingsView = () =>
         
         swalExecute(true, 'Password updated');
 
-        setState('oldPassword', '');
-        setState('password', '');
+        onResetForm();
     }
 
     const updateUsername = () =>
@@ -38,7 +38,7 @@ export const SettingsView = () =>
 
         swalExecute(true, 'Username updated');
 
-        setState('username', '');
+        onResetForm();
     }
 
     useEffect(() =>
@@ -47,41 +47,42 @@ export const SettingsView = () =>
     }, [errorMessage]);
 
     return (
-        <div className="view view-mxw1000">
-            <div className="view-panel view-panel-grid">
-                <h1 className="view-panel-element view-panel-element-grid">User Settings</h1>
-                <p className="view-panel-element view-panel-element-grid">Username</p>
-                <input 
-                    autoComplete="off" 
-                    type="text"
-                    className="view-panel-element view-panel-element-grid" 
-                    placeholder="New username"
-                    name="username"
-                    value={ username }
-                    onChange={ onInputChange }
-                />
-                <button className="view-panel-element view-panel-element-grid" onClick={ updateUsername }>Save</button>
-                <p className="view-panel-element view-panel-element-grid">Password</p>
-                <input 
-                    autoComplete="off" 
-                    type="password"
-                    className="view-panel-element view-panel-element-grid" 
-                    placeholder="Old password" 
-                    name="oldPassword"
-                    value={ oldPassword }
-                    onChange={ onInputChange }
-                />
-                <input 
-                    autoComplete="off" 
-                    type="password"
-                    className="view-panel-element view-panel-element-grid" 
-                    placeholder="New password"
-                    name="password"
-                    value={ password }
-                    onChange={ onInputChange }
-                />
-                <button className="view-panel-element view-panel-element-grid" onClick={ updatePassword }>Save</button>
+        <Fade className="view view-mxw1000">
+            <div>
+                <div className="view-panel view-panel-grid">
+                    <p className="view-panel-element view-panel-element-grid">Username</p>
+                    <input 
+                        autoComplete="off" 
+                        type="text"
+                        className="view-panel-element view-panel-element-grid" 
+                        placeholder="New username"
+                        name="username"
+                        value={ username }
+                        onChange={ onInputChange }
+                    />
+                    <button className="view-panel-element view-panel-element-grid" onClick={ updateUsername }>Save</button>
+                    <p className="view-panel-element view-panel-element-grid">Password</p>
+                    <input 
+                        autoComplete="off" 
+                        type="password"
+                        className="view-panel-element view-panel-element-grid" 
+                        placeholder="Old password" 
+                        name="oldPassword"
+                        value={ oldPassword }
+                        onChange={ onInputChange }
+                    />
+                    <input 
+                        autoComplete="off" 
+                        type="password"
+                        className="view-panel-element view-panel-element-grid" 
+                        placeholder="New password"
+                        name="password"
+                        value={ password }
+                        onChange={ onInputChange }
+                    />
+                    <button className="view-panel-element view-panel-element-grid" onClick={ updatePassword }>Save</button>
+                </div>
             </div>
-        </div>
+        </Fade>
     )
 }
