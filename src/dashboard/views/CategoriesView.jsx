@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
-import { Fade } from 'react-awesome-reveal';
 
 import { useCategoriesStore } from '../../hooks/useCategoriesStore';
 import { CategoryItem } from '../components/CategoryItem';
@@ -47,35 +46,36 @@ export const CategoriesView = () =>
     }, []);
 
     return (
-        <Fade delay={ 200 } className="view view-mxw900">
-            <div className="view view-mxw900">
-                <div className="view-panel">
-                    <input 
-                        autoComplete="off" 
-                        type="text" 
-                        className="view-panel-element" 
-                        placeholder="Category Name"
-                        name="name"
-                        value={ name }
-                        onChange={ onInputChange }
-                    />
-                    <button className="view-panel-element" onClick={addCategory}><AddIcon /></button>
-                </div>
-                
-                {
-                    categories.length > 0
-                    ?
-                    <ol className="list">
-                        {
-                            categories.map(({ id, name }) =>
-                            {
-                                return <CategoryItem key={ id } category={ { id, name } } setStates={ {setState, setUpdate} } />
-                            })
-                        }
-                    </ol>
-                    : <></>
-                }
+        <div className="view view-mxw900 animate__animated animate__fadeIn">
+            <div className="view-panel">
+                <input 
+                    autoComplete="off" 
+                    type="text" 
+                    className="view-panel-element" 
+                    placeholder="Category Name"
+                    name="name"
+                    value={ name }
+                    onChange={ onInputChange }
+                />
+                <button className="view-panel-element" onClick={addCategory}><AddIcon /></button>
             </div>
-        </Fade>
+            
+            {
+                categories.length > 0
+                ?
+                <ol className="list">
+                    {
+                        categories.map(({ id, name }) =>
+                        {
+                            return <CategoryItem key={ id } category={ { id, name } } setStates={ {setState, setUpdate} } />
+                        })
+                    }
+                </ol>
+                :
+                <ol className="list">
+                    <p className="view-panel-element">Hit the + Button to add a category</p>
+                </ol>
+            }
+        </div>
     )
 }
