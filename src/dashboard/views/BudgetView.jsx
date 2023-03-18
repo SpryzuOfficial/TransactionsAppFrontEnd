@@ -29,7 +29,7 @@ export const BudgetView = () =>
     }, [budget]);
 
     return (
-        <Fade className="view view-mxw900">
+        <Fade delay={ 200 } className="view view-mxw900">
             <div>
                 <div className="view-panel">
                     <h1 className="view-panel-element">Monthly budget:</h1>

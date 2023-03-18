@@ -47,7 +47,7 @@ export const SettingsView = () =>
     }, [errorMessage]);
 
     return (
-        <Fade className="view view-mxw1000">
+        <Fade delay={ 200 } className="view view-mxw1000">
             <div>
                 <div className="view-panel view-panel-grid">
                     <p className="view-panel-element view-panel-element-grid">Username</p>

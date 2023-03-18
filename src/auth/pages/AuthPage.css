@@ -19,7 +19,7 @@
 
     background-color: rgb(34, 38, 44);
 
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: 1.3em;
     color: rgb(215, 231, 220);
 }
@@ -46,7 +46,7 @@ button.form-element {
     text-align: center;
     margin: 1.5em 0;
 
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: 3em;
     color: rgb(198, 233, 220);
 }

@@ -10,7 +10,7 @@
 
 .navbar-element {
     margin: 0 2em;
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: 2em;
     color: rgb(198, 233, 220);
 }
@@ -32,7 +32,7 @@
 
     background-color: rgb(58, 66, 82);
 
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: 1em;
     color: rgb(218, 231, 222);
 }
@@ -53,7 +53,7 @@
 }
 
 .navbar-title {
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: 2em;
     color: rgb(198, 233, 220);
 }

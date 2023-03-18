@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Fade } from 'react-awesome-reveal';
 
 import { NavBar } from './../components/NavBar';
 import { BudgetView, CategoriesView, TransactionsView, SettingsView } from '../views/';
@@ -14,7 +13,7 @@ export const DashboardPage = () =>
     const [view, setView] = useState('trans');
     
     return (
-        <Fade>
+        <>
             <NavBar status="authenticated" username={ username } />
             
             {/* <div className="user-panel">
@@ -41,6 +40,6 @@ export const DashboardPage = () =>
                     : <></>
                 }
             </div>
-        </Fade>
+        </>
     )
 }

@@ -3,8 +3,6 @@
     padding: .5em 1em 1em 1em;
 
     width: 100%;
-
-    background-color: rgb(34, 45, 70);
 }
 
 .list-element {
@@ -17,9 +15,9 @@
 
     list-style: none;
 
-    background-color: rgb(14, 17, 29);
+    background-color: rgb(31, 39, 56);
 
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: 1.3em;
     color: rgb(198, 233, 220);
 }

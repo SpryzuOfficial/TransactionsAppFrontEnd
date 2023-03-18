@@ -54,8 +54,8 @@ export const TransactionsView = () =>
     }, []);
 
     return (
-        <div className="view view-mxw1000">
-            <Fade>
+        <Fade delay={ 200 } className="view view-mxw1000">
+            <div className="view view-mxw1000">
                 <div className="view-panel view-panel-grid">
                     <input
                         autoComplete="off" 
@@ -107,7 +107,7 @@ export const TransactionsView = () =>
                     </ol>
                     : <></>
                 }
-            </Fade>
-        </div>
+            </div>
+        </Fade>
     )
 }

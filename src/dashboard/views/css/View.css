@@ -27,7 +27,7 @@
 .view-panel-element {
     margin: 1em 0;
     
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     font-size: 2em;
     color: rgb(198, 233, 220);
 }
@@ -81,7 +81,7 @@ input.view-panel-element:hover {
 }
 
 .custom-container {
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     color: rgb(198, 233, 220) !important;
 }
 

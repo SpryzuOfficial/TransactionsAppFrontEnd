@@ -47,8 +47,8 @@ export const CategoriesView = () =>
     }, []);
 
     return (
-        <Fade className="view view-mxw900">
-            <div>
+        <Fade delay={ 200 } className="view view-mxw900">
+            <div className="view view-mxw900">
                 <div className="view-panel">
                     <input 
                         autoComplete="off" 
